@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+html {
+    font-family: 'Nunito', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #eb5e28;
+    --background-color: #fffcf2;
+    --second-color: #ccc5b9;
+    --text-color: #252422;
+    --shadow-color: #403d39;
+}
+
+html {
+    font-size: 16px;
+}
+
+.container {
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    height: 75px;
+    background-color: var(--text-color);
+}
+
+header .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+}
+
+/* Logo */
+
+.logo {
+    min-width: fit-content;
+    font-size: clamp(1.2rem, 4vw, 1.7rem);
+    text-transform: capitalize;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.logo span:first-child,
+.logo span:nth-child(2) {
+    color: var(--main-color);
+}
+
+.logo span:last-child {
+    color: var(--background-color);
+    text-transform: lowercase;
+}
+
+/* Search */
+
+.input-container {
+    flex-grow: 1;
+    min-width: 130px;
+    max-width: 300px;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: calc(50% + 5px);
+    transform: translateY(calc(-50% - 5px));
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    transition: .2s linear;
+    border: 2.5px solid var(--main-color);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.input:focus {
+    outline: none;
+    border: 0.5px solid var(--main-color);
+    box-shadow: -3px -3px 0px var(--main-color);
+}
+
+.input-container:hover>.icon {
+    animation: anim 1s linear infinite;
+}
+
+.icon svg path {
+    stroke: var(--main-color) !important;
+}
+
+@keyframes anim {
+
+    0%,
+    100% {
+        transform: translateY(calc(-50% - 5px)) scale(1);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 5px)) scale(1.1);
+    }
+}
+
+/* Repositories */
+main {
+    width: 100%;
+    height: calc(100dvh - 75px);
+    background-color: var(--shadow-color);
+    padding: 30px 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+}
+
+main .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 15px;
+    color: var(--background-color);
+}
+
+main .user-info .username {
+    font-weight: 700;
+    font-size: clamp(1.1rem,2vw,1.4rem);
+}
+main .user-info .avatar {
+    width: 65px;
+    height: 65px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: 3px solid var(--background-color);
+}
+main .user-info .repos-number {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+main .container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+main .container > span {
+    flex-grow: 1;
+    width: clamp(130px,calc(50vw - 5px),300px);
+    background-color: var(--main-color);
+    min-height: fit-content;
+    border-radius: 7px;
+    color: var(--background-color);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap:5px;
+}
+
+main .container > span .title {
+    text-decoration: none;
+    color: var(--background-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 100%;
+    max-width: 300px;
+    line-break: anywhere;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+main .container > span h3::-webkit-scrollbar {
+    display: none;
+}
+
+span .visibility {
+    font-size: 0.8rem;
+    font-weight: 800;
+    width: fit-content;
+    text-transform: capitalize;
+    background-color: transparent;
+    border: 2px solid var(--background-color);
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+
+span .div-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+span .div-container .language {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+span .div-container .stars,
+span .div-container .forks {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+span .div-container .stars i,
+span .div-container .forks i {
+    color: var(--background-color);
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+
+/* scroll bar */
+::-webkit-scrollbar {
+    background-color: var(--text-color);
+    width: clamp(10px,2vw,15px);
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--background-color);
+}

@@ -1,0 +1,38 @@
+form.btn {
+    display: flex;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.toggle {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: var(--background-color);
+    border-radius: 15px;
+    position: relative;
+    transition: background-color 0.4s ease;
+}
+
+.toggle:after {
+    content: "";
+    width: 26px;
+    height: 26px;
+    background-color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    border-radius: 13px;
+    transition: transform 0.4s ease;
+}
+
+input[type="checkbox"]:checked+.toggle {
+    background-color: var(--background-color);
+}
+
+input[type="checkbox"]:checked+.toggle::after {
+    transform: translate(30px, -50%);
+}
