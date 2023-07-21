@@ -1,7 +1,5 @@
 # GitHub User Repositories Fetcher
 
-![Alt Text](/images/git%20repos.jpg)
-
 This is a simple web application that allows users to fetch their GitHub repositories using their GitHub username. The application uses the GitHub API to retrieve the repositories associated with the provided username and displays them on the webpage.
 
 ## Demo
